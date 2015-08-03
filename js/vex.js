@@ -137,17 +137,15 @@
             return options.afterClose($vexContent, options);
           }
         };
-        if (animationEndSupport) {
-          if (beforeClose() !== false) {
-            $vex.unbind(vex.animationEndEvent).bind(vex.animationEndEvent, function() {
-              return close();
-            }).addClass(vex.baseClassNames.closing);
-          }
-        } else {
-          if (beforeClose() !== false) {
-            close();
-          }
-        }
+        // if (animationEndSupport) {
+        //   beforeClose();
+        //   $vex.unbind(vex.animationEndEvent).bind(vex.animationEndEvent, function() {
+        //     return close();
+        //   }).addClass(vex.baseClassNames.closing);
+        // } else {
+          // beforeClose();
+          close();
+        // }
         return true;
       },
       closeByEscape: function() {
